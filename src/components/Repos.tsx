@@ -2,8 +2,9 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Loader from './Loader';
+import Repo from './Repo';
 
-interface GithubData {
+export interface GithubData {
     id: number;
     type: string;
     name: string;
@@ -40,9 +41,11 @@ const Repos: React.FC = () => {
     return (
         <section className='h-full'>
             {data.length > 0 ? (
-                data.map((item, index) => (
-                    <div key={index}>g</div>
-                ))
+                <div className='grid gap-5 px-5 pt-5'>
+                    {data.map((item, index) => (
+                    <Repo data={item} />
+                    ))}
+                </div>
             ) : <Loader />}
         </section>
     );
