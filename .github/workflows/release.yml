@@ -6,7 +6,7 @@ on:
 
 jobs:
   changelog:
-    if: github.repository == '/Bashamega/TrendTrack/'
+    if: github.repository == 'Bashamega/TrendTrack/'
     runs-on: ubuntu-latest
 
     steps:
