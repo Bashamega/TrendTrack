@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/Bashamega/TrendTrack/compare/v0.5.0...v0.6.0) (2024-09-22)
+
+
+### Features
+
+* contributing.md ([f075428](https://github.com/Bashamega/TrendTrack/commit/f075428db09a7f654cf5f1266cdd9f1ba07db363))
+
+
+
 # [0.5.0](https://github.com/Bashamega/TrendTrack/compare/v0.4.0...v0.5.0) (2024-09-22)
 
 
