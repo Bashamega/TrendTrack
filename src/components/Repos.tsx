@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import Loader from './Loader';
 import Repo from './Repo';
 
@@ -43,7 +42,7 @@ const Repos: React.FC = () => {
             {data.length > 0 ? (
                 <div className='grid gap-5 px-5 pt-5'>
                     {data.map((item, index) => (
-                    <Repo data={item} />
+                    <Repo data={item} key={index} />
                     ))}
                 </div>
             ) : <Loader />}
