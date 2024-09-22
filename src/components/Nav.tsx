@@ -1,6 +1,6 @@
-"use client"
-import { useState } from 'react';
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +12,8 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-gray-800 p-4 w-screen">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className='uppercase'>
-            Trend Track
+        <Link href="/" className="uppercase">
+          Trend Track
         </Link>
         <div className="md:hidden">
           <button
@@ -36,11 +36,15 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
         </div>
-        <div className={`md:flex space-x-4 ${isOpen ? 'block' : 'hidden'} md:block`}>
-          <Link href="https://github.com/EddieHubCommunity/github-trending-repos" className='hover:underline'>
+        <div
+          className={`md:flex space-x-4 ${isOpen ? "block" : "hidden"} md:block`}
+        >
+          <Link
+            href="https://github.com/EddieHubCommunity/github-trending-repos"
+            className="hover:underline"
+          >
             API
           </Link>
-          
         </div>
       </div>
     </nav>

@@ -4,8 +4,8 @@ import Repos from "@/components/Repos";
 export default function Home() {
   return (
     <main>
-      <Navbar/>
-      <Repos/>
+      <Navbar />
+      <Repos />
     </main>
   );
 }
