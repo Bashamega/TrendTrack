@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/Bashamega/TrendTrack/compare/v0.3.0...v0.4.0) (2024-09-22)
+
+
+### Features
+
+* assign status: awaiting triage label to new issues automatically ([1f5318a](https://github.com/Bashamega/TrendTrack/commit/1f5318a10bfbcd5c8b1513dadb0757263ba02e0c))
+
+
+
 # [0.3.0](https://github.com/Bashamega/TrendTrack/compare/v0.2.0...v0.3.0) (2024-09-22)
 
 
