@@ -1,7 +1,7 @@
 name: 💡 General Feature Request
 description: Have a new idea/feature? Let us know...
 title: "[FEATURE] <description>"
-labels: ["enhancement", "feature"]
+labels: ["enhancement", "feature", "status: awaiting triage"]
 body:
   - type: checkboxes
     id: duplicates
