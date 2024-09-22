@@ -1,4 +1,14 @@
-# 0.2.0 (2024-09-22)
+# [0.3.0](https://github.com/Bashamega/TrendTrack/compare/v0.2.0...v0.3.0) (2024-09-22)
+
+
+### Features
+
+* GH issues ([cfc151f](https://github.com/Bashamega/TrendTrack/commit/cfc151fd31110a4585ea01e27909fda7ec6f51ea))
+* pr template ([855d387](https://github.com/Bashamega/TrendTrack/commit/855d3870b9cbb6b4bc901182272a28dd4d34b16f))
+
+
+
+# [0.2.0](https://github.com/Bashamega/TrendTrack/compare/627ea1f1118b3e4f4cb846d5682a737b98198ee5...v0.2.0) (2024-09-22)
 
 
 ### Features
