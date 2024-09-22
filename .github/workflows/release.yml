@@ -6,7 +6,7 @@ on:
 
 jobs:
   changelog:
-    if: github.repository == 'EddieHubCommunity/HealthCheck'
+    if: github.repository == '/Bashamega/TrendTrack/'
     runs-on: ubuntu-latest
 
     steps:
