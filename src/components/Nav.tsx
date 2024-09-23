@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
         >
         <div className="flex space-x-4 items-center">
           <Link href="https://github.com/Bashamega/TrendTrack" target="_blank">
-            <FaGithub/>
+            <FaGithub/> Github
           </Link>
           <Link
             href="https://github.com/EddieHubCommunity/github-trending-repos"
