@@ -1,3 +1,17 @@
+# [0.8.0](https://github.com/Bashamega/TrendTrack/compare/v0.7.0...v0.8.0) (2024-09-23)
+
+
+### Bug Fixes
+
+* github icon now appears next to api text ([49e746c](https://github.com/Bashamega/TrendTrack/commit/49e746c05a14fafef482b5c07cd2e13443d2fafd))
+
+
+### Features
+
+* added the github repo link to the nav ([d9d1950](https://github.com/Bashamega/TrendTrack/commit/d9d19508d25790baeb1de1ed7e62ce35d0f41e62)), closes [#12](https://github.com/Bashamega/TrendTrack/issues/12)
+
+
+
 # [0.7.0](https://github.com/Bashamega/TrendTrack/compare/v0.6.0...v0.7.0) (2024-09-23)
 
 
@@ -33,16 +47,6 @@
 ### Features
 
 * assign status: awaiting triage label to new issues automatically ([1f5318a](https://github.com/Bashamega/TrendTrack/commit/1f5318a10bfbcd5c8b1513dadb0757263ba02e0c))
-
-
-
-# [0.3.0](https://github.com/Bashamega/TrendTrack/compare/v0.2.0...v0.3.0) (2024-09-22)
-
-
-### Features
-
-* GH issues ([cfc151f](https://github.com/Bashamega/TrendTrack/commit/cfc151fd31110a4585ea01e27909fda7ec6f51ea))
-* pr template ([855d387](https://github.com/Bashamega/TrendTrack/commit/855d3870b9cbb6b4bc901182272a28dd4d34b16f))
 
 
 
