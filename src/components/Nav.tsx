@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub } from "react-icons/fa";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="uppercase">
           Trend Track
-        </Link>    
+        </Link>
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
@@ -40,17 +40,20 @@ const Navbar: React.FC = () => {
         <div
           className={`md:flex space-x-4 ${isOpen ? "block" : "hidden"} md:block`}
         >
-        <div className="flex space-x-4 items-center">
-          <Link href="https://github.com/Bashamega/TrendTrack" target="_blank">
-            <FaGithub/> Github
-          </Link>
-          <Link
-            href="https://github.com/EddieHubCommunity/github-trending-repos"
-            className="hover:underline"
-          >
-            API
-          </Link>
-          </div>  
+          <div className="flex space-x-4 items-center">
+            <Link
+              href="https://github.com/Bashamega/TrendTrack"
+              target="_blank"
+            >
+              <FaGithub /> Github
+            </Link>
+            <Link
+              href="https://github.com/EddieHubCommunity/github-trending-repos"
+              className="hover:underline"
+            >
+              API
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
