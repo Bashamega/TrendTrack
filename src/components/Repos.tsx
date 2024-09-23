@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
 import Repo from "./Repo";
 
@@ -36,9 +36,31 @@ const Repos: React.FC = () => {
 
     fetchData();
   }, []);
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const filter = formData.get('filter') as string;
+    const date = formData.get('date') as string;
+
+    const filteredData = data.filter(item => {
+      const nameIncludesFilter = item.name.toLowerCase().includes(filter.toLowerCase());
+      const createdAtMatchesDate = item.createdAt.split('T')[0] === date;
+      return nameIncludesFilter && createdAtMatchesDate;
+    });
+
+    setData(filteredData);
+  };
 
   return (
     <section className="h-full">
+      <form className="p-5" onSubmit={handleSubmit}>
+        <label>Filter:</label>
+        <div>
+          <input type="text" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-2 px-4 rounded-l" placeholder="Search"/>
+          <input type="date" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-2 px-4"/>
+          <input type="submit" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded-r" value="Search" />
+        </div>
+      </form>
       {data.length > 0 ? (
         <div className="grid gap-5 px-5 pt-5">
           {data.map((item, index) => (
