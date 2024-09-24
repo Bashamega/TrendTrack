@@ -53,14 +53,10 @@ const Repos: React.FC = () => {
 
   return (
     <section className="h-full">
-      <form className="p-5" onSubmit={handleSubmit}>
-        <label>Filter:</label>
-        <div>
-          <input type="text" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-2 px-4 rounded-l" placeholder="Search"/>
-          <input type="date" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-2 px-4"/>
-          <input type="submit" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded-r" value="Search" />
-        </div>
-      </form>
+      <div className="w-full py-5 pl-5">
+        <input type="date" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded" />
+      </div>
+
       {data.length > 0 ? (
         <div className="grid gap-5 px-5 pt-5">
           {data.map((item, index) => (
