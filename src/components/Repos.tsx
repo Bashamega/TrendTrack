@@ -39,7 +39,7 @@ const Repos: React.FC = () => {
   const handleChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
     const date = e.target.value;
     if (date) {
-      const url = `https://trending.eddiehubcommunity.org/daily?${date}`;
+      const url = `https://trending.eddiehubcommunity.org/daily?date=${date}`;
       const fetchData = async () => {
         try {
           const response = await fetch(url);
