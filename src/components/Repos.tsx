@@ -36,25 +36,31 @@ const Repos: React.FC = () => {
 
     fetchData();
   }, []);
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const filter = formData.get('filter') as string;
-    const date = formData.get('date') as string;
-
-    const filteredData = data.filter(item => {
-      const nameIncludesFilter = item.name.toLowerCase().includes(filter.toLowerCase());
-      const createdAtMatchesDate = item.createdAt.split('T')[0] === date;
-      return nameIncludesFilter && createdAtMatchesDate;
-    });
-
-    setData(filteredData);
+  const handleChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const date = e.target.value;
+    if (date) {
+      const url = `https://trending.eddiehubcommunity.org/daily?${date}`;
+      const fetchData = async () => {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          const res = await response.json();
+          console.log(res)
+          setData(res);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+      fetchData();
+    }
   };
 
   return (
     <section className="h-full">
       <div className="w-full py-5 pl-5">
-        <input type="date" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded" />
+        <input type="date" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded" onChange={handleChangeDate} />
       </div>
 
       {data.length > 0 ? (
