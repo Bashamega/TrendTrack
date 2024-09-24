@@ -47,7 +47,7 @@ const Repos: React.FC = () => {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
           const res = await response.json();
-          console.log(res)
+          console.log(res);
           setData(res);
         } catch (error) {
           console.error("Error fetching data:", error);
@@ -60,7 +60,11 @@ const Repos: React.FC = () => {
   return (
     <section className="h-full">
       <div className="w-full py-5 pl-5">
-        <input type="date" className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded" onChange={handleChangeDate} />
+        <input
+          type="date"
+          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+          onChange={handleChangeDate}
+        />
       </div>
 
       {data.length > 0 ? (
