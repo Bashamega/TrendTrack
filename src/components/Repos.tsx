@@ -47,7 +47,6 @@ const Repos: React.FC = () => {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
           const res = await response.json();
-          console.log(res);
           setData(res);
         } catch (error) {
           console.error("Error fetching data:", error);
