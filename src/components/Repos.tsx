@@ -15,7 +15,7 @@ export interface GithubData {
   createdAt: string;
 }
 const Repos: React.FC = () => {
-  const [data, setData] = useState<GithubData[] | []>([]);
+  const [data, setData] = useState<GithubData[] | [] | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,14 +66,20 @@ const Repos: React.FC = () => {
         />
       </div>
 
-      {data.length > 0 ? (
-        <div className="grid gap-5 px-5 pt-5">
-          {data.map((item, index) => (
-            <Repo data={item} key={index} />
-          ))}
-        </div>
+      {data ? (
+        data.length > 0 ? (
+          <div className="grid gap-5 px-5 pt-5">
+            {data.map((item, index) => (
+              <Repo data={item} key={index} />
+            ))}
+          </div>
+        ) : (
+          <div className="w-screen flex flex-col items-center justify-center">
+            <h1 className=" text-2xl">No Data!</h1>
+          </div>
+        )
       ) : (
-        <Loader />
+        <Loader/>
       )}
     </section>
   );
