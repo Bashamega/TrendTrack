@@ -79,7 +79,7 @@ const Repos: React.FC = () => {
           </div>
         )
       ) : (
-        <Loader/>
+        <Loader />
       )}
     </section>
   );
