@@ -44,6 +44,7 @@ const Navbar: React.FC = () => {
             <Link
               href="https://github.com/Bashamega/TrendTrack"
               target="_blank"
+              className="flex"
             >
               <FaGithub /> Github
             </Link>
