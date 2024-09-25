@@ -1,3 +1,14 @@
+# [0.10.0](https://github.com/Bashamega/TrendTrack/compare/v0.9.0...v0.10.0) (2024-09-25)
+
+
+### Features
+
+* integrated dropdown + API ([d8bb894](https://github.com/Bashamega/TrendTrack/commit/d8bb8941888c488effcec09c6980fded1229e9ee))
+* integrated shad cn ui ([c405af7](https://github.com/Bashamega/TrendTrack/commit/c405af721accc294976c3f67dcf4f8e7b9e8dfe6))
+* Select shad cn component ([80ce312](https://github.com/Bashamega/TrendTrack/commit/80ce312bb510aa8ce110e3af860537a8d4ddea7b))
+
+
+
 # [0.9.0](https://github.com/Bashamega/TrendTrack/compare/v0.8.0...v0.9.0) (2024-09-24)
 
 
@@ -43,17 +54,6 @@
 ### Features
 
 * contributing.md ([f075428](https://github.com/Bashamega/TrendTrack/commit/f075428db09a7f654cf5f1266cdd9f1ba07db363))
-
-
-
-# [0.5.0](https://github.com/Bashamega/TrendTrack/compare/v0.4.0...v0.5.0) (2024-09-22)
-
-
-### Features
-
-* gh actions to check formatting ([af7b8ed](https://github.com/Bashamega/TrendTrack/commit/af7b8ed295f1f2ff560e38eca08d40a38795f09e))
-* prettier integration ([fb242d1](https://github.com/Bashamega/TrendTrack/commit/fb242d100c13d1f5e383c37136b583d6e890b09a))
-* prettier integration ([3c57343](https://github.com/Bashamega/TrendTrack/commit/3c573437534ff539bdbea85e6dae114b58c16610))
 
 
 
