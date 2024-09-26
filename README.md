@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1 align="center" id="title">TrendTrack</h1>
 
-## Getting Started
+<p align="center">
+<img src="https://socialify.git.ci/Bashamega/TrendTrack/image?description=1&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Dark" alt="project-image" />
 
-First, run the development server:
+<h2> Description </h2>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p id="description"> TrendTrack is a platform that keeps you updated on the latest trending repositories across GitHub.</p>
+Live version at <a href ="https://trendtrack.vercel.app/">Trendtrack</a>.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h2>🧐 Features</h2>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Here're some of the project's best features:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Search for a repo (Ongoing)
+- Filter by date
+- Filter by week
+- Filter by month
 
-## Learn More
+<h2>🛠️ Developping Steps:</h2>
 
-To learn more about Next.js, take a look at the following resources:
+1. **Fork and Clone**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/Bashamega/TrendTrack
+   cd TrendTrack
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install Dependencies**:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Run Development Server**:
+   ```bash
+   npm run dev # now run on localhost:3000
+   ```
+4. **Make sure to check contributing guidelines for mor information**:
+   <a href="https://github.com/Bashamega/TrendTrack/blob/main/contributing.md">Contributing Guidelines </a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+- Next.js
+- React.js
+- Tailwind
+
+<h2>🛡️ License:</h2>
+
+This project is licensed under the MIT
