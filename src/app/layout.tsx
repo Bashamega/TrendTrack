@@ -12,7 +12,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-slate-900 text-white flex min-h-screen">{children}</body>
+      <body className="bg-slate-900 text-white flex min-h-screen">
+        {children}
+      </body>
     </html>
   );
 }
