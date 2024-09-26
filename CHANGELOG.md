@@ -1,3 +1,17 @@
+# [0.12.0](https://github.com/Bashamega/TrendTrack/compare/v0.11.0...v0.12.0) (2024-09-26)
+
+
+### Bug Fixes
+
+* prettier ([7f433f4](https://github.com/Bashamega/TrendTrack/commit/7f433f4dddcf62e91fb1ffe7356f0362f6013958))
+
+
+### Features
+
+* default date ([6b14b22](https://github.com/Bashamega/TrendTrack/commit/6b14b222f5fd2247de4c16a2ac7fd48698225a8e))
+
+
+
 # [0.11.0](https://github.com/Bashamega/TrendTrack/compare/v0.10.0...v0.11.0) (2024-09-26)
 
 
@@ -45,15 +59,6 @@
 ### Features
 
 * added the github repo link to the nav ([d9d1950](https://github.com/Bashamega/TrendTrack/commit/d9d19508d25790baeb1de1ed7e62ce35d0f41e62)), closes [#12](https://github.com/Bashamega/TrendTrack/issues/12)
-
-
-
-# [0.7.0](https://github.com/Bashamega/TrendTrack/compare/v0.6.0...v0.7.0) (2024-09-23)
-
-
-### Features
-
-* Create dependabot.yml ([a57a137](https://github.com/Bashamega/TrendTrack/commit/a57a137d8b752cf272c4faef9d0607acb35b58aa))
 
 
 
