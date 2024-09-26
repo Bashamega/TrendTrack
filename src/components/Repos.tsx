@@ -24,7 +24,9 @@ export interface GithubData {
 const Repos: React.FC = () => {
   const [data, setData] = useState<GithubData[] | [] | null>(null);
   const [selectedOption, setSelectedOption] = useState<string>("daily");
-  const [date, setDate] = useState<string | undefined>(undefined);
+  const [date, setDate] = useState<string | undefined>(
+    new Date().toISOString().split("T")[0],
+  );
   useEffect(() => {
     const fetchData = async () => {
       const url = `https://trending.eddiehubcommunity.org/${selectedOption}${date ? `?date=${date}` : ""}`;
@@ -54,6 +56,7 @@ const Repos: React.FC = () => {
           onChange={(e) => {
             setDate(e.target.value);
           }}
+          value={date}
         />
         <Select
           value={selectedOption}
