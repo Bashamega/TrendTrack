@@ -1,11 +1,9 @@
-
 <h1 align="center" id="title">TrendTrack</h1>
 
 <p align="center">
 <img src="https://socialify.git.ci/Bashamega/TrendTrack/image?description=1&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Dark" alt="project-image" />
 
-<h2> Description </h2> 
-
+<h2> Description </h2>
 
 <p id="description"> TrendTrack is a platform that keeps you updated on the latest trending repositories across GitHub.</p>
 Live version at <a href ="https://trendtrack.vercel.app/">Trendtrack</a>.
@@ -38,9 +36,8 @@ Here're some of the project's best features:
    ```bash
    npm run dev # now run on localhost:3000
    ```
-   
 4. **Make sure to check contributing guidelines for mor information**:
-	<a href="https://github.com/Bashamega/TrendTrack/blob/main/contributing.md">Contributing Guidelines </a>
+   <a href="https://github.com/Bashamega/TrendTrack/blob/main/contributing.md">Contributing Guidelines </a>
 
 <h2>💻 Built with</h2>
 
@@ -48,6 +45,7 @@ Technologies used in the project:
 
 - Next.js
 - React.js
+- Tailwind
 
 <h2>🛡️ License:</h2>
 
