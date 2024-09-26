@@ -1,3 +1,12 @@
+# [0.11.0](https://github.com/Bashamega/TrendTrack/compare/v0.10.0...v0.11.0) (2024-09-26)
+
+
+### Features
+
+* Now README.md is related to the project ([5e04a2b](https://github.com/Bashamega/TrendTrack/commit/5e04a2b75de76c5f745674e68c200374885ad983))
+
+
+
 # [0.10.0](https://github.com/Bashamega/TrendTrack/compare/v0.9.0...v0.10.0) (2024-09-25)
 
 
@@ -45,15 +54,6 @@
 ### Features
 
 * Create dependabot.yml ([a57a137](https://github.com/Bashamega/TrendTrack/commit/a57a137d8b752cf272c4faef9d0607acb35b58aa))
-
-
-
-# [0.6.0](https://github.com/Bashamega/TrendTrack/compare/v0.5.0...v0.6.0) (2024-09-22)
-
-
-### Features
-
-* contributing.md ([f075428](https://github.com/Bashamega/TrendTrack/commit/f075428db09a7f654cf5f1266cdd9f1ba07db363))
 
 
 
