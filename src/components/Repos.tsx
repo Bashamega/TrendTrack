@@ -23,13 +23,21 @@ export interface GithubData {
 }
 const Repos: React.FC = () => {
   const [data, setData] = useState<GithubData[] | [] | null>(null);
+  const [filteredData, setFilteredData] = useState<GithubData[] | [] | null>(
+    null,
+  );
   const [selectedOption, setSelectedOption] = useState<string>("daily");
   const [date, setDate] = useState<string | undefined>(
     new Date().toISOString().split("T")[0],
   );
+
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
   useEffect(() => {
     const fetchData = async () => {
-      const url = `https://trending.eddiehubcommunity.org/${selectedOption}${date ? `?date=${date}` : ""}`;
+      const url = `https://trending.eddiehubcommunity.org/${selectedOption}${
+        date ? `?date=${date}` : ""
+      }`;
       try {
         const response = await fetch(url);
 
@@ -39,6 +47,7 @@ const Repos: React.FC = () => {
 
         const res = await response.json();
         setData(res);
+        setFilteredData(res);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -46,6 +55,15 @@ const Repos: React.FC = () => {
 
     fetchData();
   }, [date, selectedOption]);
+
+  useEffect(() => {
+    if (data) {
+      const filtered = data.filter((repo) =>
+        repo.name.toLowerCase().includes(searchQuery.toLowerCase()),
+      );
+      setFilteredData(filtered);
+    }
+  }, [searchQuery, data]);
 
   return (
     <section className="h-full">
@@ -57,6 +75,13 @@ const Repos: React.FC = () => {
             setDate(e.target.value);
           }}
           value={date}
+        />
+        <input
+          type="text"
+          placeholder="Search Repositories"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
         />
         <Select
           value={selectedOption}
@@ -77,10 +102,10 @@ const Repos: React.FC = () => {
         </Select>
       </div>
 
-      {data ? (
-        data.length > 0 ? (
+      {filteredData ? (
+        filteredData.length > 0 ? (
           <div className="grid gap-5 px-5 pt-5">
-            {data.map((item, index) => (
+            {filteredData.map((item, index) => (
               <Repo data={item} key={index} />
             ))}
           </div>
