@@ -17,7 +17,7 @@ Here're some of the project's best features:
 - Filter by week
 - Filter by month
 
-<h2>🛠️ Developping Steps:</h2>
+<h2>🛠️ Developing Steps:</h2>
 
 1. **Fork and Clone**:
 
