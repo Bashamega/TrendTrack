@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
 import { GithubData } from "./Repos";
+import { cn } from "@/lib/utils";
 
 interface RepoProps {
   data: GithubData;
   key: number;
+  show: boolean;
 }
 
-const Repo: React.FC<RepoProps> = ({ data, key }) => {
+const Repo: React.FC<RepoProps> = ({ data, key, show }) => {
   const [viewed, setViewed] = useState(() => {
     const storedRepos = localStorage.getItem("ttViewedRepos");
     return storedRepos ? JSON.parse(storedRepos).includes(data.id) : false;
@@ -28,7 +30,10 @@ const Repo: React.FC<RepoProps> = ({ data, key }) => {
 
   return (
     <div
-      className="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:cursor-pointer"
+      className={cn(
+        "bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:cursor-pointer",
+        { hidden: !show && viewed },
+      )}
       key={key}
       onClick={handleOnClick}
     >
