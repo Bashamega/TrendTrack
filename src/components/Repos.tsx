@@ -115,7 +115,7 @@ const Repos: React.FC = () => {
           className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded text-nowrap"
           onClick={() => setShowViewed(!showViewed)}
         >
-          {showViewed ? "Hide Viewed" : "Show Viewed"}
+          {showViewed ? "Show Viewed" : "Hide Viewed"}
         </button>
       </div>
 
