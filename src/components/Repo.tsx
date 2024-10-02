@@ -15,7 +15,7 @@ const Repo: React.FC<RepoProps> = ({ data, key }) => {
       href={"https://github.com" + data.name}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+      className="repo-card bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
       key={key}
     >
       <div className="flex items-center">
