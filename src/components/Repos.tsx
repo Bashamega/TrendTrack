@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Loader from "./Loader";
 import Repo from "./Repo";
@@ -118,13 +119,21 @@ const Repos: React.FC = () => {
         </button>
       </div>
 
-      <div className="w-full flex justify-end px-5">
-        {showViewed ? null : (
-          <Link href="/repos/viewed" className="link text-sm" shallow>
-            Viewed Repos
-          </Link>
+      <AnimatePresence>
+        {showViewed && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            key={"viewed-repos"}
+            className="flex px-5 justify-end w-full"
+          >
+            <Link href="/repos/viewed" className="link text-sm" shallow>
+              Viewed Repos
+            </Link>
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
 
       {filteredData ? (
         filteredData.length > 0 ? (
