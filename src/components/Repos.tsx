@@ -1,5 +1,7 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
+
 import Loader from "./Loader";
 import Repo from "./Repo";
 import {
@@ -9,6 +11,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+import Link from "next/link";
 
 export interface GithubData {
   id: number;
@@ -106,14 +110,20 @@ const Repos: React.FC = () => {
           </Select>
         </div>
 
-        <div>
-          <button
-            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded text-nowrap"
-            onClick={() => setShowViewed(!showViewed)}
-          >
-            {showViewed ? "Hide Viewed" : "Show Viewed"}
-          </button>
-        </div>
+        <button
+          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded text-nowrap"
+          onClick={() => setShowViewed(!showViewed)}
+        >
+          {showViewed ? "Hide Viewed" : "Show Viewed"}
+        </button>
+      </div>
+
+      <div className="w-full flex justify-end px-5">
+        {showViewed ? null : (
+          <Link href="/repos/viewed" className="link text-sm" shallow>
+            Viewed Repos
+          </Link>
+        )}
       </div>
 
       {filteredData ? (
