@@ -32,6 +32,9 @@ const Repos: React.FC = () => {
   );
 
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [showViewed, setShowViewed] = useState(
+    Boolean(localStorage.getItem("ttViewedRepos")),
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,46 +70,57 @@ const Repos: React.FC = () => {
 
   return (
     <section className="h-full">
-      <div className="w-full py-5 pl-5 flex space-x-2 items-center">
-        <input
-          type="date"
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
-          onChange={(e) => {
-            setDate(e.target.value);
-          }}
-          value={date}
-        />
-        <input
-          type="text"
-          placeholder="Search Repositories"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
-        />
-        <Select
-          value={selectedOption}
-          onValueChange={(value) => {
-            setSelectedOption(value);
-          }}
-        >
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Daily" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="daily" defaultChecked={true}>
-              Daily
-            </SelectItem>
-            <SelectItem value="weekly">Weekly</SelectItem>
-            <SelectItem value="monthly">Monthly</SelectItem>
-          </SelectContent>
-        </Select>
+      <div className="flex flex-row items-center justify-between py-5 px-5">
+        <div className="w-full flex space-x-2 items-center">
+          <input
+            type="date"
+            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+            onChange={(e) => {
+              setDate(e.target.value);
+            }}
+            value={date}
+          />
+          <input
+            type="text"
+            placeholder="Search Repositories"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+          />
+          <Select
+            value={selectedOption}
+            onValueChange={(value) => {
+              setSelectedOption(value);
+            }}
+          >
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Daily" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="daily" defaultChecked={true}>
+                Daily
+              </SelectItem>
+              <SelectItem value="weekly">Weekly</SelectItem>
+              <SelectItem value="monthly">Monthly</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div>
+          <button
+            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded text-nowrap"
+            onClick={() => setShowViewed(!showViewed)}
+          >
+            {showViewed ? "Hide Viewed" : "Show Viewed"}
+          </button>
+        </div>
       </div>
 
       {filteredData ? (
         filteredData.length > 0 ? (
           <div className="grid gap-5 px-5 pt-5">
             {filteredData.map((item, index) => (
-              <Repo data={item} key={index} />
+              <Repo data={item} key={index} show={showViewed} />
             ))}
           </div>
         ) : (
