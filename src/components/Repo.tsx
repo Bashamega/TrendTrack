@@ -28,7 +28,7 @@ const Repo: React.FC<RepoProps> = ({ data, key }) => {
 
   return (
     <div
-      className="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+      className="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:cursor-pointer"
       key={key}
       onClick={handleOnClick}
     >
