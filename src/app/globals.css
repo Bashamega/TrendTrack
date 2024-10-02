@@ -63,4 +63,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  .repo-card {
+    @apply transition-transform duration-200 ease-in-out; /* Tailwind CSS utility classes for smooth transition */
+  }
+  .repo-card:hover {
+    transform: scale(1.02); /* Scale effect on hover */
+  }
 }
