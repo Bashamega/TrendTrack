@@ -8,23 +8,28 @@ import Image from "next/image";
 import languageColors from "@/colors";
 import { getBestContrastColor } from "@/lib/contrastColors";
 
+export interface ViewedRepo extends GithubData {
+  viewedAt: string;
+}
+
 interface RepoProps {
   data: GithubData;
-  key: number;
   show: boolean;
 }
 
-const Repo: React.FC<RepoProps> = ({ data, key, show }) => {
+const Repo: React.FC<RepoProps> = ({ data, show }) => {
   const [viewed, setViewed] = useState<boolean>(false);
+  const [viewedRepo, setViewedRepo] = useState<ViewedRepo | null>(null);
 
   useEffect(() => {
     const storedRepos = localStorage.getItem("ttViewedRepos");
 
     if (storedRepos) {
       const repos = JSON.parse(storedRepos);
-      repos.forEach((repo: GithubData) => {
+      repos.forEach((repo: ViewedRepo) => {
         if (repo.id === data.id) {
           setViewed(true);
+          setViewedRepo(repo);
         }
       });
     } else {
@@ -37,7 +42,9 @@ const Repo: React.FC<RepoProps> = ({ data, key, show }) => {
     const repos = existingRepos ? JSON.parse(existingRepos) : [];
 
     if (!repos.includes(data.id)) {
-      repos.push(data);
+      // date should be DD-MM-YYYY
+      repos.push({ ...data, viewedAt: new Date().toLocaleDateString() });
+
       localStorage.setItem("ttViewedRepos", JSON.stringify(repos));
     }
 
@@ -53,13 +60,15 @@ const Repo: React.FC<RepoProps> = ({ data, key, show }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="repo-card bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-          key={key}
+          key={data.id}
           onClick={handleOnClick}
         >
           <div className="flex items-center justify-between">
             <p className="text-xl font-semibold text-gray-200">{data.name}</p>
-            {viewed && (
-              <p className="text-gray-400 text-sm font-medium">Viewed</p>
+            {viewed && viewedRepo && (
+              <p className="text-gray-400 text-sm font-medium">
+                Viewed on: {viewedRepo.viewedAt}
+              </p>
             )}
           </div>
 
