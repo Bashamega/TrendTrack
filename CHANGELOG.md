@@ -1,3 +1,12 @@
+# [0.14.0](https://github.com/Bashamega/TrendTrack/compare/v0.13.0...v0.14.0) (2024-10-03)
+
+
+### Features
+
+* contrast colors ([0b81ef6](https://github.com/Bashamega/TrendTrack/commit/0b81ef6ea87415b7e4e2040d19619d35b88e636c))
+
+
+
 # [0.13.0](https://github.com/Bashamega/TrendTrack/compare/v0.12.0...v0.13.0) (2024-09-27)
 
 
@@ -38,22 +47,6 @@
 * integrated dropdown + API ([d8bb894](https://github.com/Bashamega/TrendTrack/commit/d8bb8941888c488effcec09c6980fded1229e9ee))
 * integrated shad cn ui ([c405af7](https://github.com/Bashamega/TrendTrack/commit/c405af721accc294976c3f67dcf4f8e7b9e8dfe6))
 * Select shad cn component ([80ce312](https://github.com/Bashamega/TrendTrack/commit/80ce312bb510aa8ce110e3af860537a8d4ddea7b))
-
-
-
-# [0.9.0](https://github.com/Bashamega/TrendTrack/compare/v0.8.0...v0.9.0) (2024-09-24)
-
-
-### Bug Fixes
-
-* api ([92d7b61](https://github.com/Bashamega/TrendTrack/commit/92d7b61214640470e32db85956569c22fd8a9eaf))
-
-
-### Features
-
-* change date ([5199f02](https://github.com/Bashamega/TrendTrack/commit/5199f02ab81174b056bba413047ccab1017e1df8))
-* form ui ([63f7b22](https://github.com/Bashamega/TrendTrack/commit/63f7b2273e627357b0665985f445e5d95ef52ca3))
-* remove search ([d9badf5](https://github.com/Bashamega/TrendTrack/commit/d9badf57dafe3f12cf205af0bfa418b9a5f650a1))
 
 
 
