@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
-import Loader from "./Loader";
-import Repo from "./Repo";
 import {
   Select,
   SelectContent,
@@ -12,7 +11,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import Link from "next/link";
+import Loader from "./Loader";
+import Repo from "./Repo";
 
 export interface GithubData {
   id: number;
