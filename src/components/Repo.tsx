@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { cn } from "@/lib/utils";
-
 import { GithubData } from "./Repos";
 
 interface RepoProps {
@@ -12,10 +11,22 @@ interface RepoProps {
 }
 
 const Repo: React.FC<RepoProps> = ({ data, key, show }) => {
-  const [viewed, setViewed] = useState<boolean>(() => {
+  const [viewed, setViewed] = useState<boolean>(false);
+
+  useEffect(() => {
     const storedRepos = localStorage.getItem("ttViewedRepos");
-    return storedRepos ? JSON.parse(storedRepos).includes(data.id) : false;
-  });
+
+    if (storedRepos) {
+      const repos = JSON.parse(storedRepos);
+      repos.forEach((repo: GithubData) => {
+        if (repo.id === data.id) {
+          setViewed(true);
+        }
+      });
+    } else {
+      setViewed(false);
+    }
+  }, [data]);
 
   const handleOnClick = () => {
     const existingRepos = localStorage.getItem("ttViewedRepos");
@@ -32,7 +43,7 @@ const Repo: React.FC<RepoProps> = ({ data, key, show }) => {
 
   return (
     <AnimatePresence mode="popLayout">
-      {(!viewed || show) && (
+      {(!viewed || !show) && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
