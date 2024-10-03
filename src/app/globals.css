@@ -67,6 +67,7 @@
     @apply transition-transform duration-200 ease-in-out; /* Tailwind CSS utility classes for smooth transition */
   }
   .repo-card:hover {
+    @apply bg-blue-800;
     transform: scale(1.02); /* Scale effect on hover */
   }
 }

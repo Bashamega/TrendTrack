@@ -3,6 +3,7 @@ import { GithubData } from "./Repos";
 import starImage from "@/assets/starImage.svg";
 import forkImage from "@/assets/forkImage.svg";
 import Image from "next/image";
+import languageColors from "@/colors";
 
 interface RepoProps {
   data: GithubData;
@@ -23,7 +24,10 @@ const Repo: React.FC<RepoProps> = ({ data, key }) => {
 
         {/* Language Badge - Only show if language is specified */}
         {data.language ? (
-          <span className="ml-2 inline-block bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">
+          <span
+            className="ml-2 inline-block text-white text-xs font-medium px-2.5 py-0.5 rounded"
+            style={{ backgroundColor: languageColors[data.language] || "#ccc" }} // Default color if language is not in the map
+          >
             {data.language}
           </span>
         ) : null}
