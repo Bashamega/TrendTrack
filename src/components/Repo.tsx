@@ -4,6 +4,7 @@ import starImage from "@/assets/starImage.svg";
 import forkImage from "@/assets/forkImage.svg";
 import Image from "next/image";
 import languageColors from "@/colors";
+import { getBestContrastColor } from "@/lib/contrastColors";
 
 interface RepoProps {
   data: GithubData;
@@ -25,8 +26,11 @@ const Repo: React.FC<RepoProps> = ({ data, key }) => {
         {/* Language Badge - Only show if language is specified */}
         {data.language ? (
           <span
-            className="ml-2 inline-block text-white text-xs font-medium px-2.5 py-0.5 rounded"
-            style={{ backgroundColor: languageColors[data.language] || "#ccc" }} // Default color if language is not in the map
+            className="ml-2 inline-block  text-xs font-medium px-2.5 py-0.5 rounded"
+            style={{
+              backgroundColor: languageColors[data.language] || "#ccc",
+              color: getBestContrastColor(languageColors[data.language]),
+            }} // Default color if language is not in the map
           >
             {data.language}
           </span>
