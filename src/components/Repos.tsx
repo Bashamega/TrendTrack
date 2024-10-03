@@ -37,9 +37,7 @@ const Repos: React.FC = () => {
   );
 
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [showViewed, setShowViewed] = useState(
-    Boolean(localStorage.getItem("ttViewedRepos")),
-  );
+  const [showViewed, setShowViewed] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
