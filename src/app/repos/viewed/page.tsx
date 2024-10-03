@@ -4,10 +4,18 @@ import Loader from "@/components/Loader";
 import Navbar from "@/components/Nav";
 import Repo from "@/components/Repo";
 import type { GithubData } from "@/components/Repos";
+import { useEffect, useState } from "react";
 
 export default function Page() {
-  const storedRepos = localStorage.getItem("ttViewedRepos");
-  const data = storedRepos ? JSON.parse(storedRepos) : [];
+  const [data, setData] = useState<GithubData[]>([]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedRepos = localStorage.getItem("ttViewedRepos");
+      const parsedData = storedRepos ? JSON.parse(storedRepos) : [];
+      setData(parsedData);
+    }
+  }, []);
 
   return (
     <main>
