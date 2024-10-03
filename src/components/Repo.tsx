@@ -22,7 +22,7 @@ const Repo: React.FC<RepoProps> = ({ data, key, show }) => {
     const repos = existingRepos ? JSON.parse(existingRepos) : [];
 
     if (!repos.includes(data.id)) {
-      repos.push(data.id);
+      repos.push(data);
       localStorage.setItem("ttViewedRepos", JSON.stringify(repos));
     }
 
