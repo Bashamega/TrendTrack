@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Nav";
-import Repo from "@/components/Repo";
+import Repo, { ViewedRepo } from "@/components/Repo";
 import type { GithubData } from "@/components/Repos";
 
 export default function Page() {
-  const [data, setData] = useState<GithubData[]>([]);
+  const [data, setData] = useState<ViewedRepo[]>([]);
   const [filteredData, setFilteredData] = useState<GithubData[] | [] | null>(
     null,
   );
@@ -27,12 +27,21 @@ export default function Page() {
 
   useEffect(() => {
     if (data) {
-      const filtered = data.filter((repo) =>
-        repo.name.toLowerCase().includes(searchQuery.toLowerCase()),
-      );
+      const filtered = data.filter((repo) => {
+        const matchesSearchQuery = searchQuery
+          ? repo.name.toLowerCase().includes(searchQuery.toLowerCase())
+          : true;
+
+        const matchesDate = date
+          ? normalizeDate(repo.viewedAt) === normalizeDate(date)
+          : true;
+
+        return matchesSearchQuery && matchesDate;
+      });
+
       setFilteredData(filtered);
     }
-  }, [searchQuery, data]);
+  }, [searchQuery, data, date]);
 
   return (
     <main>
@@ -73,3 +82,16 @@ export default function Page() {
     </main>
   );
 }
+
+// Helper function to normalize date formats
+const normalizeDate = (dateString: string) => {
+  if (/\d{4}-\d{2}-\d{2}/.test(dateString)) {
+    // Date is in YYYY-MM-DD format
+    return dateString;
+  } else if (/\d{2}\/\d{2}\/\d{4}/.test(dateString)) {
+    // Convert DD/MM/YYYY to YYYY-MM-DD
+    const [day, month, year] = dateString.split("/");
+    return `${year}-${month}-${day}`;
+  }
+  return dateString;
+};

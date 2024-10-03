@@ -42,7 +42,6 @@ const Repo: React.FC<RepoProps> = ({ data, show }) => {
     const repos = existingRepos ? JSON.parse(existingRepos) : [];
 
     if (!repos.includes(data.id)) {
-      // date should be DD-MM-YYYY
       repos.push({ ...data, viewedAt: new Date().toLocaleDateString() });
 
       localStorage.setItem("ttViewedRepos", JSON.stringify(repos));
