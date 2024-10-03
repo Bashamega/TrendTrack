@@ -43,7 +43,7 @@ const Repo: React.FC<RepoProps> = ({ data, key, show }) => {
 
   return (
     <AnimatePresence mode="popLayout">
-      {(!viewed || !show) && (
+      {(!viewed || show) && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
