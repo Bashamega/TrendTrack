@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 import Loader from "./Loader";
 import Repo from "./Repo";
@@ -73,7 +72,7 @@ const Repos: React.FC = () => {
 
   return (
     <section className="h-full">
-      <div className="flex flex-row items-center justify-between py-5 px-5">
+      <div className="flex flex-row items-center justify-between p-5">
         <div className="w-full flex space-x-2 items-center">
           <input
             type="date"
@@ -117,21 +116,11 @@ const Repos: React.FC = () => {
         </button>
       </div>
 
-      <AnimatePresence>
-        {!showViewed && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            key={"viewed-repos"}
-            className="flex px-5 justify-end w-full"
-          >
-            <Link href="/repos/viewed" className="link text-sm" shallow>
-              Viewed Repos
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div className="flex px-5 justify-end w-full">
+        <Link href="/repos/viewed" className="link text-sm" shallow>
+          Viewed Repos
+        </Link>
+      </div>
 
       {filteredData ? (
         filteredData.length > 0 ? (
