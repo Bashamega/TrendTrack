@@ -1,17 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import Loader from "@/components/Loader";
 import Navbar from "@/components/Nav";
 import Repo from "@/components/Repo";
 import type { GithubData } from "@/components/Repos";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useEffect, useState } from "react";
 
 export default function Page() {
   const [data, setData] = useState<GithubData[]>([]);
@@ -19,7 +13,6 @@ export default function Page() {
     null,
   );
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [selectedOption, setSelectedOption] = useState<string>("daily");
   const [date, setDate] = useState<string | undefined>(
     new Date().toISOString().split("T")[0],
   );
@@ -60,23 +53,6 @@ export default function Page() {
           onChange={(e) => setSearchQuery(e.target.value)}
           className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
         />
-        <Select
-          value={selectedOption}
-          onValueChange={(value) => {
-            setSelectedOption(value);
-          }}
-        >
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Daily" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="daily" defaultChecked={true}>
-              Daily
-            </SelectItem>
-            <SelectItem value="weekly">Weekly</SelectItem>
-            <SelectItem value="monthly">Monthly</SelectItem>
-          </SelectContent>
-        </Select>
       </div>
 
       {filteredData ? (
