@@ -41,14 +41,22 @@ const Repo: React.FC<RepoProps> = ({ data, show }) => {
     const existingRepos = localStorage.getItem("ttViewedRepos");
     const repos = existingRepos ? JSON.parse(existingRepos) : [];
 
-    if (!repos.includes(data.id)) {
-      repos.push({ ...data, viewedAt: new Date().toLocaleDateString() });
+    const alreadyViewed = repos.some((repo: ViewedRepo) => repo.id === data.id);
+
+    if (!alreadyViewed) {
+      const updatedRepo = {
+        ...data,
+        viewedAt: new Date().toLocaleDateString(),
+      };
+      repos.push(updatedRepo);
 
       localStorage.setItem("ttViewedRepos", JSON.stringify(repos));
+
+      setViewed(true);
+      setViewedRepo(updatedRepo);
     }
 
     window.open(`https://github.com${data.name}`);
-    setViewed(true);
   };
 
   return (
