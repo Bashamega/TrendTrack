@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             Discover the top trending repositories with TrendTrack, the ultimate
             platform for developers, tech enthusiasts, and curious minds.
             Explore fresh ideas, cutting-edge tools, and innovative projects—all
-            in one user-friendly place. Stay u`pdated daily and see what's
+            in one user-friendly place. Stay updated daily and see what&apos;s
             shaping the future of tech.
           </p>
           <button className="btn btn-primary w-1/4">Check Trends</button>
