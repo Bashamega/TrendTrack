@@ -16,11 +16,11 @@ const Hero: React.FC = () => {
             Stay Ahead of GitHub Trends
           </h1>
           <p className="py-8 text-sm md:text-base">
-            Discover the top trending repositories with TrendTrack, the ultimate
+            Discover the top trending repositories with TrendTrack! The ultimate
             platform for developers, tech enthusiasts, and curious minds.
-            Explore fresh ideas, cutting-edge tools, and innovative projects—all
-            in one user-friendly place. Stay u`pdated daily and see what's
-            shaping the future of tech.
+            Explore fresh ideas, cutting-edge tools, and innovative projects
+            that are all in one user-friendly place. Stay updated daily and see
+            what is shaping the future of tech.
           </p>
           <button className="btn btn-primary w-1/4">Check Trends</button>
           {/* Button still needs to be programmed to smooth scrool to "Repos" section */}
