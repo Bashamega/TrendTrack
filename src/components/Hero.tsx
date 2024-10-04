@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Hero: React.FC = () => {
   return (
-    <div className="hero bg-slate-900 h-auto md:min-h-screen md:h-[390px]">
+    <div className="hero bg-slate-900 p-2 h-auto md:min-h-screen md:h-[390px]">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <Image
           src={heroImage}
@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
             that are all in one user-friendly place. Stay updated daily and see
             what is shaping the future of tech.
           </p>
-          <button className="btn btn-primary w-1/4">Check Trends</button>
+          <button className="btn btn-primary w-1/2">Check Trends</button>
           {/* Button still needs to be programmed to smooth scrool to "Repos" section */}
         </div>
       </div>

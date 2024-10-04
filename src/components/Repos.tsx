@@ -67,10 +67,10 @@ const Repos: React.FC = () => {
 
   return (
     <section className="h-full">
-      <div className="w-full py-5 pl-5 flex space-x-2 items-center">
+      <div className="w-full py-5 px-5 flex flex-col md:flex-row md:space-x-2 md:items-center mx-auto">
         <input
           type="date"
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded mb-4 md:mb-0"
           onChange={(e) => {
             setDate(e.target.value);
           }}
@@ -81,7 +81,7 @@ const Repos: React.FC = () => {
           placeholder="Search Repositories"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded mb-4 md:mb-0"
         />
         <Select
           value={selectedOption}
@@ -89,7 +89,7 @@ const Repos: React.FC = () => {
             setSelectedOption(value);
           }}
         >
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-full md:w-[180px] mb-4 md:mb-0">
             <SelectValue placeholder="Daily" />
           </SelectTrigger>
           <SelectContent>
