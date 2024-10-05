@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./Loader";
 import Repo from "./Repo";
+import Image from "next/image";
+import filterImage from "@/assets/filterImage.svg";
 import {
   Select,
   SelectContent,
@@ -26,12 +28,17 @@ const Repos: React.FC = () => {
   const [filteredData, setFilteredData] = useState<GithubData[] | [] | null>(
     null,
   );
+  const [languageFilter, setLanguageFilter] = useState<string>("");
+  const [minStarsFilter, setMinStarsFilter] = useState<number | undefined>(
+    undefined,
+  );
   const [selectedOption, setSelectedOption] = useState<string>("daily");
   const [date, setDate] = useState<string | undefined>(
     new Date().toISOString().split("T")[0],
   );
 
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isFilterBoxVisible, setIsFilterBoxVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,12 +65,22 @@ const Repos: React.FC = () => {
 
   useEffect(() => {
     if (data) {
-      const filtered = data.filter((repo) =>
-        repo.name.toLowerCase().includes(searchQuery.toLowerCase()),
-      );
+      const filtered = data.filter((repo) => {
+        const matchesName = repo.name
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
+        const matchesLanguage = languageFilter
+          ? repo.language.toLowerCase().includes(languageFilter.toLowerCase())
+          : true;
+        const matchesStars = minStarsFilter
+          ? repo.stars >= minStarsFilter
+          : true;
+
+        return matchesName && matchesLanguage && matchesStars;
+      });
       setFilteredData(filtered);
     }
-  }, [searchQuery, data]);
+  }, [searchQuery, data, languageFilter, minStarsFilter]);
 
   return (
     <section className="h-full">
@@ -83,6 +100,54 @@ const Repos: React.FC = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded mb-4 md:mb-0"
         />
+        <button
+          className="w-12 h-12 bg-gray-800 hover:bg-gray-900 rounded flex items-center justify-center"
+          onClick={() => setIsFilterBoxVisible(!isFilterBoxVisible)}
+        >
+          <Image
+            src={filterImage} // Use next/image for importing the SVG
+            alt="Filter Icon"
+            width={25} // Set appropriate width
+            height={25} // Set appropriate height
+          />
+        </button>
+
+        {/* Floating Filter Box */}
+        {isFilterBoxVisible && (
+          <div className="absolute top-32 left-96 w-64 bg-gray-700 p-4 rounded shadow-lg z-10">
+            <h3 className="text-white font-semibold mb-2">Filter Options</h3>
+            <div className="mb-4">
+              <label className="text-gray-200">Language:</label>
+              <input
+                type="text"
+                placeholder="Enter language"
+                className="w-full bg-gray-600 text-gray-200 py-2 px-3 rounded mt-1"
+                onChange={(e) => setLanguageFilter(e.target.value)} // Update language filter
+              />
+            </div>
+            <div>
+              <label className="text-gray-200">Stars:</label>
+              <input
+                type="number"
+                placeholder="Minimum stars"
+                className="w-full bg-gray-600 text-gray-200 py-2 px-3 rounded mt-1"
+                onChange={(e) =>
+                  setMinStarsFilter(Number(e.target.value) || undefined)
+                } // Update stars filter
+              />
+            </div>
+            <button
+              className="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded"
+              onClick={() => {
+                // Apply filters logic
+                setIsFilterBoxVisible(false); // Close the filter box after applying
+              }}
+            >
+              Apply Filters
+            </button>
+          </div>
+        )}
+
         <Select
           value={selectedOption}
           onValueChange={(value) => {
