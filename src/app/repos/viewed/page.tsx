@@ -46,10 +46,10 @@ export default function Page() {
   return (
     <main>
       <Navbar />
-      <div className="flex flex-row items-center gap-2 py-5 px-5">
+      <div className="flex md:flex-row flex-col items-center gap-2 py-5 px-5">
         <input
           type="date"
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+          className="w-full md:w-auto bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
           onChange={(e) => {
             setDate(e.target.value);
           }}
@@ -60,7 +60,7 @@ export default function Page() {
           placeholder="Search Repositories"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+          className="w-full md:w-auto bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
         />
       </div>
 

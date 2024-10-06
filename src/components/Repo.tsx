@@ -73,7 +73,7 @@ const Repo: React.FC<RepoProps> = ({ data, show }) => {
           <div className="flex items-center justify-between">
             <p className="text-xl font-semibold text-gray-200">{data.name}</p>
             {viewed && viewedRepo && (
-              <p className="text-gray-400 text-sm font-medium">
+              <p className="text-gray-400 text-sm font-medium text-right">
                 Viewed on: {viewedRepo.viewedAt}
               </p>
             )}
