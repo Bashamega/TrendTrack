@@ -1,4 +1,6 @@
 "use client";
+import Logo from "@/assets/Logo.svg";
+import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
@@ -13,9 +15,12 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-gray-800 p-4 w-screen">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="uppercase">
-          Trend Track
-        </Link>
+        <div className="container mx-auto flex justify-start items-center">
+          <Image src={Logo} alt="Logo" />
+          <Link href="/" className="uppercase pl-4">
+            Trend Track
+          </Link>
+        </div>
         <div className="md:hidden">
           <button
             onClick={toggleMenu}

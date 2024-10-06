@@ -72,11 +72,11 @@ const Repos: React.FC = () => {
 
   return (
     <section className="h-full">
-      <div className="flex flex-row items-center justify-between p-5">
-        <div className="w-full flex space-x-2 items-center">
+      <div className="flex items-center justify-between p-5 flex-col md:flex-row md:space-x-2 md:items-center mx-auto">
+        <div className="w-full flex flex-col md:flex-row gap-2 items-center">
           <input
             type="date"
-            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+            className="bg-gray-800 w-full hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded md:w-auto"
             onChange={(e) => {
               setDate(e.target.value);
             }}
@@ -87,7 +87,7 @@ const Repos: React.FC = () => {
             placeholder="Search Repositories"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded"
+            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 w-full rounded md:w-auto"
           />
           <Select
             value={selectedOption}
@@ -95,7 +95,7 @@ const Repos: React.FC = () => {
               setSelectedOption(value);
             }}
           >
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-full md:w-[180px] mb-4 md:mb-0">
               <SelectValue placeholder="Daily" />
             </SelectTrigger>
             <SelectContent>
@@ -109,7 +109,7 @@ const Repos: React.FC = () => {
         </div>
 
         <button
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded text-nowrap"
+          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded text-nowrap self-end md:self-auto"
           onClick={() => setShowViewed(!showViewed)}
         >
           {showViewed ? "Hide Viewed" : "Show Viewed"}
