@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "@/assets/heroImage.svg";
+import heroImage from "@/assets/heroImagev2.svg";
 import Image from "next/image";
 
 const Hero: React.FC = () => {
