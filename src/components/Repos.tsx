@@ -1,7 +1,8 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
-import Loader from "./Loader";
-import Repo from "./Repo";
+import Link from "next/link";
+
 import {
   Select,
   SelectContent,
@@ -9,6 +10,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+import Loader from "./Loader";
+import Repo from "./Repo";
 
 export interface GithubData {
   id: number;
@@ -32,6 +36,7 @@ const Repos: React.FC = () => {
   );
 
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [showViewed, setShowViewed] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,46 +72,61 @@ const Repos: React.FC = () => {
 
   return (
     <section className="h-full">
-      <div className="w-full py-5 px-5 flex flex-col md:flex-row md:space-x-2 md:items-center mx-auto">
-        <input
-          type="date"
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded mb-4 md:mb-0"
-          onChange={(e) => {
-            setDate(e.target.value);
-          }}
-          value={date}
-        />
-        <input
-          type="text"
-          placeholder="Search Repositories"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded mb-4 md:mb-0"
-        />
-        <Select
-          value={selectedOption}
-          onValueChange={(value) => {
-            setSelectedOption(value);
-          }}
+      <div className="flex items-center justify-between p-5 flex-col md:flex-row md:space-x-2 md:items-center mx-auto">
+        <div className="w-full flex flex-col md:flex-row gap-2 items-center">
+          <input
+            type="date"
+            className="bg-gray-800 w-full hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded md:w-auto"
+            onChange={(e) => {
+              setDate(e.target.value);
+            }}
+            value={date}
+          />
+          <input
+            type="text"
+            placeholder="Search Repositories"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 w-full rounded md:w-auto"
+          />
+          <Select
+            value={selectedOption}
+            onValueChange={(value) => {
+              setSelectedOption(value);
+            }}
+          >
+            <SelectTrigger className="w-full md:w-[180px] mb-4 md:mb-0">
+              <SelectValue placeholder="Daily" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="daily" defaultChecked={true}>
+                Daily
+              </SelectItem>
+              <SelectItem value="weekly">Weekly</SelectItem>
+              <SelectItem value="monthly">Monthly</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <button
+          className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 rounded text-nowrap self-end md:self-auto"
+          onClick={() => setShowViewed(!showViewed)}
         >
-          <SelectTrigger className="w-full md:w-[180px] mb-4 md:mb-0">
-            <SelectValue placeholder="Daily" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="daily" defaultChecked={true}>
-              Daily
-            </SelectItem>
-            <SelectItem value="weekly">Weekly</SelectItem>
-            <SelectItem value="monthly">Monthly</SelectItem>
-          </SelectContent>
-        </Select>
+          {showViewed ? "Hide Viewed" : "Show Viewed"}
+        </button>
+      </div>
+
+      <div className="flex px-5 justify-end w-full">
+        <Link href="/repos/viewed" className="link text-sm" shallow>
+          Viewed Repos
+        </Link>
       </div>
 
       {filteredData ? (
         filteredData.length > 0 ? (
           <div className="grid gap-5 px-5 pt-5">
             {filteredData.map((item, index) => (
-              <Repo data={item} key={index} />
+              <Repo data={item} key={index} show={showViewed} />
             ))}
           </div>
         ) : (
