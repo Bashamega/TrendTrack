@@ -1,3 +1,12 @@
+# [0.15.0](https://github.com/Bashamega/TrendTrack/compare/v0.14.0...v0.15.0) (2024-10-08)
+
+
+### Reverts
+
+* Revert "chore(deps-dev): bump eslint from 8.57.1 to 9.12.0 (#61)" (#62) ([3931c05](https://github.com/Bashamega/TrendTrack/commit/3931c05cbb1f7df1c501e79b08c31e5564172c31)), closes [#61](https://github.com/Bashamega/TrendTrack/issues/61) [#62](https://github.com/Bashamega/TrendTrack/issues/62)
+
+
+
 # [0.14.0](https://github.com/Bashamega/TrendTrack/compare/v0.13.0...v0.14.0) (2024-10-03)
 
 
@@ -36,17 +45,6 @@
 ### Features
 
 * Now README.md is related to the project ([5e04a2b](https://github.com/Bashamega/TrendTrack/commit/5e04a2b75de76c5f745674e68c200374885ad983))
-
-
-
-# [0.10.0](https://github.com/Bashamega/TrendTrack/compare/v0.9.0...v0.10.0) (2024-09-25)
-
-
-### Features
-
-* integrated dropdown + API ([d8bb894](https://github.com/Bashamega/TrendTrack/commit/d8bb8941888c488effcec09c6980fded1229e9ee))
-* integrated shad cn ui ([c405af7](https://github.com/Bashamega/TrendTrack/commit/c405af721accc294976c3f67dcf4f8e7b9e8dfe6))
-* Select shad cn component ([80ce312](https://github.com/Bashamega/TrendTrack/commit/80ce312bb510aa8ce110e3af860537a8d4ddea7b))
 
 
 
