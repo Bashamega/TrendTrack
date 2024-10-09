@@ -36,7 +36,14 @@ const Repos: React.FC = () => {
   );
 
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [showViewed, setShowViewed] = useState<boolean>(true);
+  const [showViewed, setShowViewed] = useState<boolean>(() => {
+    const hideViewed = localStorage.getItem("ttHideViewed");
+    return hideViewed === "true" ? false : true;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("ttHideViewed", showViewed ? "false" : "true");
+  }, [showViewed]);
 
   useEffect(() => {
     const fetchData = async () => {
