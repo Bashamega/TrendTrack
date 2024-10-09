@@ -37,12 +37,18 @@ const Repos: React.FC = () => {
 
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [showViewed, setShowViewed] = useState<boolean>(() => {
-    const hideViewed = localStorage.getItem("ttHideViewed");
-    return hideViewed === "true" ? false : true;
+    if (typeof window !== "undefined") {
+      const hideViewed = localStorage.getItem("ttHideViewed");
+      return hideViewed === "true" ? false : true;
+    } else {
+      return true;
+    }
   });
 
   useEffect(() => {
-    localStorage.setItem("ttHideViewed", showViewed ? "false" : "true");
+    if (typeof window !== "undefined") {
+      localStorage.setItem("ttHideViewed", showViewed ? "false" : "true");
+    }
   }, [showViewed]);
 
   useEffect(() => {
