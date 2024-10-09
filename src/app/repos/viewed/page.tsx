@@ -20,8 +20,13 @@ export default function Page() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedRepos = localStorage.getItem("ttViewedRepos");
-      const parsedData = storedRepos ? JSON.parse(storedRepos) : [];
-      setData(parsedData);
+      try {
+        const parsedData = storedRepos ? JSON.parse(storedRepos) : [];
+        setData(parsedData);
+      } catch (error) {
+        console.error("Failed to parse localStorage data:", error);
+        setData([]);
+      }
     }
   }, []);
 
