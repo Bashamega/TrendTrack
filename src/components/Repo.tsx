@@ -66,7 +66,7 @@ const Repo: React.FC<RepoProps> = ({ data, show }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="repo-card bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+          className="repo-card bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg hover:delay-50 hover:transition-transform hover:duration-300 hover:ease-in-out transition-shadow duration-300"
           key={data.id}
           onClick={handleOnClick}
         >
