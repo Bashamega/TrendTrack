@@ -1,3 +1,12 @@
+## [0.15.1](https://github.com/Bashamega/TrendTrack/compare/v0.15.0...v0.15.1) (2024-10-09)
+
+
+### Bug Fixes
+
+* workflow ([00fa081](https://github.com/Bashamega/TrendTrack/commit/00fa0814ff0d14087a46e221f54cc6a07c2857f7))
+
+
+
 # [0.15.0](https://github.com/Bashamega/TrendTrack/compare/v0.14.0...v0.15.0) (2024-10-08)
 
 
@@ -36,15 +45,6 @@
 ### Features
 
 * default date ([6b14b22](https://github.com/Bashamega/TrendTrack/commit/6b14b222f5fd2247de4c16a2ac7fd48698225a8e))
-
-
-
-# [0.11.0](https://github.com/Bashamega/TrendTrack/compare/v0.10.0...v0.11.0) (2024-09-26)
-
-
-### Features
-
-* Now README.md is related to the project ([5e04a2b](https://github.com/Bashamega/TrendTrack/commit/5e04a2b75de76c5f745674e68c200374885ad983))
 
 
 
