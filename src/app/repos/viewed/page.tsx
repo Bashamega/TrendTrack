@@ -37,9 +37,7 @@ export default function Page() {
           ? repo.name.toLowerCase().includes(searchQuery.toLowerCase())
           : true;
 
-        const matchesDate = date
-          ? normalizeDate(repo.viewedAt) === normalizeDate(date)
-          : true;
+        const matchesDate = date === repo.viewedAt;
 
         return matchesSearchQuery && matchesDate;
       });
@@ -87,16 +85,3 @@ export default function Page() {
     </main>
   );
 }
-
-// Helper function to normalize date formats
-const normalizeDate = (dateString: string) => {
-  if (/\d{4}-\d{2}-\d{2}/.test(dateString)) {
-    // Date is in YYYY-MM-DD format
-    return dateString;
-  } else if (/\d{2}\/\d{2}\/\d{4}/.test(dateString)) {
-    // Convert DD/MM/YYYY to YYYY-MM-DD
-    const [day, month, year] = dateString.split("/");
-    return `${year}-${month}-${day}`;
-  }
-  return dateString;
-};
