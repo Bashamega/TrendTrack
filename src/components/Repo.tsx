@@ -46,7 +46,7 @@ const Repo: React.FC<RepoProps> = ({ data, show }) => {
     if (!alreadyViewed) {
       const updatedRepo = {
         ...data,
-        viewedAt: new Date().toLocaleDateString(),
+        viewedAt: new Date().toISOString().split("T")[0], // Outputs 'YYYY-MM-DD'
       };
       repos.push(updatedRepo);
 
