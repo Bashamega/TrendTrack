@@ -47,6 +47,13 @@ const Repos: React.FC = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      const hideViewedStatus = localStorage.getItem("ttHideViewed");
+      setShowViewed(hideViewedStatus === "true" ? false : true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
       localStorage.setItem("ttHideViewed", showViewed ? "false" : "true");
     }
   }, [showViewed]);
