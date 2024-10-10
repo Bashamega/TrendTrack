@@ -46,7 +46,7 @@ const Repo: React.FC<RepoProps> = ({ data, show }) => {
     if (!alreadyViewed) {
       const updatedRepo = {
         ...data,
-        viewedAt: new Date().toLocaleDateString(),
+        viewedAt: new Date().toISOString().split("T")[0], // Outputs 'YYYY-MM-DD'
       };
       repos.push(updatedRepo);
 
@@ -74,7 +74,7 @@ const Repo: React.FC<RepoProps> = ({ data, show }) => {
             <p className="text-xl font-semibold text-gray-200">{data.name}</p>
             {viewed && viewedRepo && (
               <p className="text-gray-400 text-sm font-medium text-right">
-                Viewed on: {viewedRepo.viewedAt}
+                Viewed on: {normalizeDate(viewedRepo.viewedAt)}
               </p>
             )}
           </div>
@@ -112,3 +112,14 @@ const Repo: React.FC<RepoProps> = ({ data, show }) => {
 };
 
 export default Repo;
+
+// Helper function to normalize date formats
+const normalizeDate = (dateString: string) => {
+  if (/\d{4}-\d{2}-\d{2}/.test(dateString)) {
+    // Convert DD/MM/YYYY to YYYY-MM-DD
+    const [year, month, day] = dateString.split("-");
+    return `${day}/${month}/${year}`;
+  } else {
+    return dateString;
+  }
+};

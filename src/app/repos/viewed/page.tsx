@@ -20,8 +20,13 @@ export default function Page() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedRepos = localStorage.getItem("ttViewedRepos");
-      const parsedData = storedRepos ? JSON.parse(storedRepos) : [];
-      setData(parsedData);
+      try {
+        const parsedData = storedRepos ? JSON.parse(storedRepos) : [];
+        setData(parsedData);
+      } catch (error) {
+        console.error("Failed to parse localStorage data:", error);
+        setData([]);
+      }
     }
   }, []);
 
@@ -32,9 +37,7 @@ export default function Page() {
           ? repo.name.toLowerCase().includes(searchQuery.toLowerCase())
           : true;
 
-        const matchesDate = date
-          ? normalizeDate(repo.viewedAt) === normalizeDate(date)
-          : true;
+        const matchesDate = date === repo.viewedAt;
 
         return matchesSearchQuery && matchesDate;
       });
@@ -82,16 +85,3 @@ export default function Page() {
     </main>
   );
 }
-
-// Helper function to normalize date formats
-const normalizeDate = (dateString: string) => {
-  if (/\d{4}-\d{2}-\d{2}/.test(dateString)) {
-    // Date is in YYYY-MM-DD format
-    return dateString;
-  } else if (/\d{2}\/\d{2}\/\d{4}/.test(dateString)) {
-    // Convert DD/MM/YYYY to YYYY-MM-DD
-    const [day, month, year] = dateString.split("/");
-    return `${year}-${month}-${day}`;
-  }
-  return dateString;
-};
