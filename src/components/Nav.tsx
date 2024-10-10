@@ -45,17 +45,17 @@ const Navbar: React.FC = () => {
         <div
           className={`md:flex space-x-4 ${isOpen ? "block" : "hidden"} md:block`}
         >
-          <div className="flex space-x-4 items-center">
+          <div className="flex space-x-4 items-center mr-6">
             <Link
               href="https://github.com/Bashamega/TrendTrack"
               target="_blank"
               className="flex items-center"
             >
-              <FaGithub /> Github
+              <FaGithub className="mr-2" /> Github
             </Link>
             <Link
               href="https://github.com/EddieHubCommunity/github-trending-repos"
-              className="hover:underline"
+              className="hover:underline mr-4"
             >
               API
             </Link>
