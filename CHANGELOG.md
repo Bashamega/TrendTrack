@@ -1,3 +1,12 @@
+## [0.15.3](https://github.com/Bashamega/TrendTrack/compare/v0.15.2...v0.15.3) (2024-10-11)
+
+
+### Bug Fixes
+
+* nav bar ([427bfcb](https://github.com/Bashamega/TrendTrack/commit/427bfcb63da956e8608cd6392a37063b91fcd062))
+
+
+
 ## [0.15.2](https://github.com/Bashamega/TrendTrack/compare/v0.15.1...v0.15.2) (2024-10-09)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * contrast colors ([0b81ef6](https://github.com/Bashamega/TrendTrack/commit/0b81ef6ea87415b7e4e2040d19619d35b88e636c))
-
-
-
-# [0.13.0](https://github.com/Bashamega/TrendTrack/compare/v0.12.0...v0.13.0) (2024-09-27)
-
-
-### Features
-
-* pre-co,,it hook to apply prettier--write ([20987bc](https://github.com/Bashamega/TrendTrack/commit/20987bca0fafff7b82608af86eab3d2340353a8d))
 
 
 
