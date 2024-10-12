@@ -1,3 +1,12 @@
+## [0.16.1](https://github.com/Bashamega/TrendTrack/compare/v0.16.0...v0.16.1) (2024-10-12)
+
+
+### Bug Fixes
+
+* check repo name ([6b5ecd7](https://github.com/Bashamega/TrendTrack/commit/6b5ecd7d416c44ccedca0eda42024c1971590f99))
+
+
+
 # [0.16.0](https://github.com/Bashamega/TrendTrack/compare/v0.15.3...v0.16.0) (2024-10-12)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * workflow ([00fa081](https://github.com/Bashamega/TrendTrack/commit/00fa0814ff0d14087a46e221f54cc6a07c2857f7))
-
-
-
-# [0.15.0](https://github.com/Bashamega/TrendTrack/compare/v0.14.0...v0.15.0) (2024-10-08)
-
-
-### Reverts
-
-* Revert "chore(deps-dev): bump eslint from 8.57.1 to 9.12.0 (#61)" (#62) ([3931c05](https://github.com/Bashamega/TrendTrack/commit/3931c05cbb1f7df1c501e79b08c31e5564172c31)), closes [#61](https://github.com/Bashamega/TrendTrack/issues/61) [#62](https://github.com/Bashamega/TrendTrack/issues/62)
 
 
 
