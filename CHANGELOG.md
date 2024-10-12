@@ -1,3 +1,12 @@
+# [0.16.0](https://github.com/Bashamega/TrendTrack/compare/v0.15.3...v0.16.0) (2024-10-12)
+
+
+### Features
+
+* sync changes to gitlab ([35929cf](https://github.com/Bashamega/TrendTrack/commit/35929cf1ea72195e10d7f3791660e56ead455f4b))
+
+
+
 ## [0.15.3](https://github.com/Bashamega/TrendTrack/compare/v0.15.2...v0.15.3) (2024-10-11)
 
 
@@ -31,15 +40,6 @@
 ### Reverts
 
 * Revert "chore(deps-dev): bump eslint from 8.57.1 to 9.12.0 (#61)" (#62) ([3931c05](https://github.com/Bashamega/TrendTrack/commit/3931c05cbb1f7df1c501e79b08c31e5564172c31)), closes [#61](https://github.com/Bashamega/TrendTrack/issues/61) [#62](https://github.com/Bashamega/TrendTrack/issues/62)
-
-
-
-# [0.14.0](https://github.com/Bashamega/TrendTrack/compare/v0.13.0...v0.14.0) (2024-10-03)
-
-
-### Features
-
-* contrast colors ([0b81ef6](https://github.com/Bashamega/TrendTrack/commit/0b81ef6ea87415b7e4e2040d19619d35b88e636c))
 
 
 
