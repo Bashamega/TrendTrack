@@ -1,3 +1,12 @@
+## [0.16.2](https://github.com/Bashamega/TrendTrack/compare/v0.16.1...v0.16.2) (2024-10-13)
+
+
+### Bug Fixes
+
+* extra blank space ([97479ee](https://github.com/Bashamega/TrendTrack/commit/97479ee4e6ef7cf17eaba7054473544b95de38ca))
+
+
+
 ## [0.16.1](https://github.com/Bashamega/TrendTrack/compare/v0.16.0...v0.16.1) (2024-10-12)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * spelling ([40f14e7](https://github.com/Bashamega/TrendTrack/commit/40f14e71fa60f464b64b8d217a7a9518c41598b4))
-
-
-
-## [0.15.1](https://github.com/Bashamega/TrendTrack/compare/v0.15.0...v0.15.1) (2024-10-09)
-
-
-### Bug Fixes
-
-* workflow ([00fa081](https://github.com/Bashamega/TrendTrack/commit/00fa0814ff0d14087a46e221f54cc6a07c2857f7))
 
 
 
