@@ -91,7 +91,7 @@ const Repos: React.FC = () => {
   }, [searchQuery, data]);
 
   return (
-    <section className="h-full">
+    <section>
       <div className="flex items-center justify-between p-5 flex-col md:flex-row md:space-x-2 md:items-center mx-auto">
         <div className="w-full flex flex-col md:flex-row gap-2 items-center">
           <input
