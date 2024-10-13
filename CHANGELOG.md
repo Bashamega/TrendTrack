@@ -1,3 +1,12 @@
+# [0.17.0](https://github.com/Bashamega/TrendTrack/compare/v0.16.3...v0.17.0) (2024-10-13)
+
+
+### Features
+
+* added logo ([#79](https://github.com/Bashamega/TrendTrack/issues/79)) ([25ef9a3](https://github.com/Bashamega/TrendTrack/commit/25ef9a366323c4cbda0586defe58cda8ac9d1196))
+
+
+
 ## [0.16.3](https://github.com/Bashamega/TrendTrack/compare/v0.16.2...v0.16.3) (2024-10-13)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * sync changes to gitlab ([35929cf](https://github.com/Bashamega/TrendTrack/commit/35929cf1ea72195e10d7f3791660e56ead455f4b))
-
-
-
-## [0.15.3](https://github.com/Bashamega/TrendTrack/compare/v0.15.2...v0.15.3) (2024-10-11)
-
-
-### Bug Fixes
-
-* nav bar ([427bfcb](https://github.com/Bashamega/TrendTrack/commit/427bfcb63da956e8608cd6392a37063b91fcd062))
 
 
 
