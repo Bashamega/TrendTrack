@@ -1,3 +1,12 @@
+## [0.16.3](https://github.com/Bashamega/TrendTrack/compare/v0.16.2...v0.16.3) (2024-10-13)
+
+
+### Bug Fixes
+
+* spelling ([#76](https://github.com/Bashamega/TrendTrack/issues/76)) ([811e478](https://github.com/Bashamega/TrendTrack/commit/811e47841637fad4dd9951295984fdb5d682188c))
+
+
+
 ## [0.16.2](https://github.com/Bashamega/TrendTrack/compare/v0.16.1...v0.16.2) (2024-10-13)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * nav bar ([427bfcb](https://github.com/Bashamega/TrendTrack/commit/427bfcb63da956e8608cd6392a37063b91fcd062))
-
-
-
-## [0.15.2](https://github.com/Bashamega/TrendTrack/compare/v0.15.1...v0.15.2) (2024-10-09)
-
-
-### Bug Fixes
-
-* spelling ([40f14e7](https://github.com/Bashamega/TrendTrack/commit/40f14e71fa60f464b64b8d217a7a9518c41598b4))
 
 
 
