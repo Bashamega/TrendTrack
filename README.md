@@ -36,7 +36,7 @@ Here're some of the project's best features:
    ```bash
    npm run dev # now run on localhost:3000
    ```
-4. **Make sure to check contributing guidelines for mor information**:
+4. **Make sure to check contributing guidelines for more information**:
    <a href="https://github.com/Bashamega/TrendTrack/blob/main/contributing.md">Contributing Guidelines </a>
 
 <h2>💻 Built with</h2>
