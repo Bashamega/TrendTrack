@@ -1,8 +1,22 @@
+"use client";
+
 import React from "react";
 import heroImage from "@/assets/heroImagev2.svg";
 import Image from "next/image";
 
 const Hero: React.FC = () => {
+  const scrollToRepoControls = () => {
+    const repoControlsSection = document.getElementById("repo-controls");
+    if (repoControlsSection) {
+      const yOffset = -20; // Adjust this value to fine-tune the scroll position
+      const y =
+        repoControlsSection.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="hero bg-slate-900 p-2 h-auto md:min-h-screen md:h-[390px]">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -22,8 +36,12 @@ const Hero: React.FC = () => {
             that are all in one user-friendly place. Stay updated daily and see
             what is shaping the future of tech.
           </p>
-          <button className="btn btn-primary w-1/2">Check Trends</button>
-          {/* Button still needs to be programmed to smooth scrool to "Repos" section */}
+          <button
+            className="btn btn-primary w-1/2"
+            onClick={scrollToRepoControls}
+          >
+            Check Trends
+          </button>
         </div>
       </div>
     </div>
