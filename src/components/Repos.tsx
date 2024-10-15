@@ -92,7 +92,10 @@ const Repos: React.FC = () => {
 
   return (
     <section>
-      <div className="flex items-center justify-between p-5 flex-col md:flex-row md:space-x-2 md:items-center mx-auto">
+      <div
+        id="repo-controls"
+        className="flex items-center justify-between p-5 flex-col md:flex-row md:space-x-2 md:items-center mx-auto pt-20 pb-10"
+      >
         <div className="w-full flex flex-col md:flex-row gap-2 items-center">
           <input
             type="date"
