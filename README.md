@@ -3,6 +3,12 @@
 <p align="center">
 <img src="https://socialify.git.ci/Bashamega/TrendTrack/image?description=1&forks=1&issues=1&language=1&name=1&owner=1&pulls=1&stargazers=1&theme=Dark" alt="project-image" />
 
+
+> **⚠️ Note: This project is currently archived.**
+> 
+> TrendTrack has been archived because Mr. Joude, the owner of the API, decided to shut it down. In order to restore the project, Mr. Jpude would need to be convinced to host the API again. The project remains open-source, but the live version will not function as expected until the API is available.
+
+
 <h2> Description </h2>
 
 <p id="description"> TrendTrack is a platform that keeps you updated on the latest trending repositories across GitHub.</p>
