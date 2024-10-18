@@ -13,7 +13,9 @@ import {
 
 import Loader from "./Loader";
 import Repo from "./Repo";
-
+import Image from "next/image";
+import filterImage from "@/assets/filterImage.svg";
+import FilterModal from "./FilterModal";
 export interface GithubData {
   id: number;
   type: string;
@@ -44,6 +46,15 @@ const Repos: React.FC = () => {
       return true;
     }
   });
+
+  const clearFilters = () => {
+    setFilteredData(data); // Reset to original data
+    setShowFilterModal(false); // Close the modal
+    // Reset other filters if necessary...
+  };
+
+  // Filter modal states
+  const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -90,6 +101,25 @@ const Repos: React.FC = () => {
     }
   }, [searchQuery, data]);
 
+  // Function to apply filters
+  const applyFilters = (filters: {
+    language: string;
+    minStars: number;
+    minForks: number;
+  }) => {
+    if (data) {
+      const filtered = data.filter((repo) => {
+        const languageMatch = filters.language
+          ? repo.language.toLowerCase() === filters.language.toLowerCase()
+          : true;
+        const starsMatch = repo.stars >= filters.minStars;
+        const forksMatch = repo.forks >= filters.minForks;
+        return languageMatch && starsMatch && forksMatch;
+      });
+      setFilteredData(filtered);
+    }
+  };
+
   return (
     <section>
       <div
@@ -112,6 +142,23 @@ const Repos: React.FC = () => {
             onChange={(e) => setSearchQuery(e.target.value)}
             className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-4 w-full rounded md:w-auto"
           />
+          {/* Square Button for Filters with Image */}
+          <button
+            className="bg-gray-800 hover:bg-gray-900 text-gray-200 font-bold py-3 px-3 rounded-md flex items-center justify-center"
+            style={{ width: "47px", height: "47px" }}
+            onClick={() => setShowFilterModal(true)} // Open filter modal
+            aria-label="Add Filters"
+          >
+            {/* Filter Image Icon inside Button */}
+            <Image
+              src={filterImage}
+              alt="Filter Icon"
+              width={47}
+              height={47}
+              className="object-contain"
+            />
+          </button>
+
           <Select
             value={selectedOption}
             onValueChange={(value) => {
@@ -160,6 +207,14 @@ const Repos: React.FC = () => {
       ) : (
         <Loader />
       )}
+
+      {/* Filter Modal */}
+      <FilterModal
+        showModal={showFilterModal}
+        onClose={() => setShowFilterModal(false)}
+        onApply={applyFilters}
+        onClear={clearFilters} // Make sure to pass this prop
+      />
     </section>
   );
 };
